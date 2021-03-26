@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   {% block head_content %}{% endblock %}
   {% load sass_tags %}
 
@@ -12,12 +13,10 @@
 
 <body>
 
-    {% include "shared/nav.html" %}
+  {% include "shared/nav.html" %}
 
-    <div class="container mt-5">
-        {% block container %}
-        {% endblock%}
-    </div>
+  {% block container %}
+  {% endblock%}
 
 </body>
 </html>
