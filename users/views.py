@@ -26,4 +26,4 @@ class SignupView(FormView):
 class LoginView(auth_views.LoginView):
     """Login view."""
 
-    template_name = 'users/users/login.html'
+    template_name = 'users/login.html'
