@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% load widget_tweaks %}
 
 {% block head_content %}
@@ -8,8 +8,8 @@
 {% block container %}
 
   <form
-    method="POST"
-    action="{% url 'users:signup' %}"
+    method='POST'
+    action='{% url 'users:signup' %}'
     class='form'
   >
     {% csrf_token %}
