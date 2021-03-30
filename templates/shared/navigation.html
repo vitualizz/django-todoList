@@ -1,0 +1,45 @@
+<nav class='navigation'>
+  <div class='navigation__logo'>
+    <h1>TodoList by Lee</h1>
+  </div>
+
+  <div class='navigation__actions'>
+    {% if request.user.is_authenticated %}
+
+      {% url 'users:logout' as url %}
+      <a
+        class='navigation__actionsLink
+              {% if request.path == url %}
+              navigation__actionsLinkActive
+              {% endif %}'
+        href='{{ url }}'
+      >
+        LogOut
+      </a>
+
+    {% else %}
+
+      {% url 'users:login' as url %}
+      <a
+        class='navigation__actionsLink
+              {% if request.path == url %}
+                navigation__actionsLinkActive
+              {% endif %}'
+        href='{{ url }}'
+      >
+        Login
+      </a>
+
+      {% url 'users:signup' as url %}
+      <a
+        class='navigation__actionsLink 
+              {% if request.path == url %}
+                navigation__actionsLinkActive
+              {% endif %}'
+        href='{{ url }}'
+      >
+        Sign Up
+      </a>
+    {% endif %}
+  </div>
+</nav>

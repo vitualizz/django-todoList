@@ -1,12 +1,27 @@
-*, body {
+* {
   margin: 0;
   padding: 0; }
+
+a {
+  text-decoration: none; }
 
 * {
   font-family: 'Manjari', sans-serif; }
 
-.navbar {
-  background: #f9f9f9; }
+.navigation {
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px; }
+  .navigation__actionsLink {
+    font-weight: bold;
+    color: #1E1C20;
+    margin: 0 10px;
+    transition: all 0.2s ease-in-out; }
+    .navigation__actionsLink:hover, .navigation__actionsLinkActive {
+      color: #ff75a0; }
 
 .form__fieldInput, .form__btnSave {
   font-weight: bold;
