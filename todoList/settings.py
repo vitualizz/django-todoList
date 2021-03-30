@@ -44,6 +44,9 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     # Sass
     'sass_processor',
+
+    # Widget Tweaks
+    'widget_tweaks'
 ]
 
 LOCAL_APPS = [

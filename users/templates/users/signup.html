@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block head_content %}
 <title>Platzigram sign up</title>
@@ -6,23 +7,37 @@
 
 {% block container %}
 
-  <form action="{% url 'users:signup' %}" method="POST">
+  <form
+    method="POST"
+    action="{% url 'users:signup' %}"
+    class='form'
+  >
     {% csrf_token %}
 
-    {% for field in form %}
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
       <div class='form__field'>
-        {{ field.errors }}
-        {{ field.label_tag }}
-        <div class="form__fieldInput">
-          {{ field }}
-        </div>
+        {% render_field field class='form__fieldInput' placeholder=field.label %}
+
         {% if field.help_text %}
-          <p class='form__fieldHelp'>{{ field.help_text|safe }}</p>
+          <p class='form__fieldHelp'>{{ field.help_text | safe }}</p>
         {% endif %}
+
+        {% for error in field.errors %}
+          <p class='form__fieldError'>{{ error }}</p>
+        {% endfor %}
       </div>
     {% endfor %}
 
-    <button type="submit">Register!</button>
+    <button
+      class='btn form__fieldSave'
+      type='submit'
+    >
+      Register!
+    </button>
   </form>
 
 {% endblock %}
