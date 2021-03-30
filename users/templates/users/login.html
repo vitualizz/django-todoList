@@ -7,46 +7,48 @@
 
 {% block container %}
 
-    <form
-      method='POST'
-      action="{% url "users:login" %}"
-      class='form'
+  <form
+    method='POST'
+    action="{% url "users:login" %}"
+    class='form'
+  >
+
+    {% csrf_token %}
+
+    {% for hidden in form.hidden_fields %}
+      {{ hidden }}
+    {% endfor %}
+
+    {% for field in form.visible_fields %}
+      <div class='form__field'>
+        {% render_field field class='form__fieldInput' placeholder=field.label %}
+
+        {% if field.help_text %}
+          <p class='form__fieldHelp'>
+            {{ field.help_text | safe }}
+          </p>
+        {% endif %}
+
+        {% for error in field.errors %}
+          <p class='form__fieldError'>
+            {{ error }}
+          </p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+    <button
+      class='btn form__fieldSave'
+      type='submit'
     >
-        
-      {% csrf_token %}
-
-      {% for hidden in form.hidden_fields %}
-        {{ hidden }}
-      {% endfor %}
-
-      {% for field in form.visible_fields %}
-        <div class='form__field'>
-          {% render_field field class='form__fieldInput' placeholder=field.label %}
-
-          {% if field.help_text %}
-            <p class='form__fieldHelp'>
-              {{ field.help_text | safe }}
-            </p>
-          {% endif %}
-
-          {% for error in field.errors %}
-            <p class='form__fieldError'>
-              {{ error }}
-            </p>
-          {% endfor %}
-        </div>
-      {% endfor %}
-
-      <button
-        class='btn form__fieldSave'
-        type='submit'
-      >
-        Log In!
-      </button>
+      Log In!
+    </button>
 
 
-    </form>
+  </form>
 
-    <p class="mt-4">Don't have an account yet? <a href="{% url "users:signup" %}">Sign up here.</a></p>
+  <p>
+    Don't have an account yet? <a href="{% url "users:signup" %}">Sign up here.</a>
+  </p>
 
 {% endblock %}
