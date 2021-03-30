@@ -7,12 +7,6 @@
 
 {% block container %}
 
-    {% if form.errors %}
-        <p class="alert alert-danger">
-            Your username and password didn't match. Please try again.
-        </p>
-    {% endif%}
-
     <form
       method='POST'
       action="{% url "users:login" %}"
@@ -30,11 +24,15 @@
           {% render_field field class='form__fieldInput' placeholder=field.label %}
 
           {% if field.help_text %}
-            <p class='form__fieldHelp'>{{ field.help_text | safe }}</p>
+            <p class='form__fieldHelp'>
+              {{ field.help_text | safe }}
+            </p>
           {% endif %}
 
           {% for error in field.errors %}
-            <p class='form__fieldError'>{{ error }}</p>
+            <p class='form__fieldError'>
+              {{ error }}
+            </p>
           {% endfor %}
         </div>
       {% endfor %}

@@ -23,11 +23,15 @@
         {% render_field field class='form__fieldInput' placeholder=field.label %}
 
         {% if field.help_text %}
-          <p class='form__fieldHelp'>{{ field.help_text | safe }}</p>
+          <p class='form__fieldHelp'>
+            {{ field.help_text | safe }}
+          </p>
         {% endif %}
 
         {% for error in field.errors %}
-          <p class='form__fieldError'>{{ error }}</p>
+          <p class='form__fieldError'>
+            {{ error }}
+          </p>
         {% endfor %}
       </div>
     {% endfor %}
