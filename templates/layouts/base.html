@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+
+  {% block head_content %}{% endblock %}
+  {% load sass_tags %}
+
+  <link rel='preconnect' href='https://fonts.gstatic.com'>
+  <link href='https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='{% sass_src 'styles/main.sass'%}'>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+
+  {% include 'shared/navigation.html' %}
+
+  {% block container %}
+  {% endblock%}
+
+</body>
+</html>

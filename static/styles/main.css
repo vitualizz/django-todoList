@@ -8,13 +8,28 @@ a {
 * {
   font-family: 'Manjari', sans-serif; }
 
+.l-account {
+  background: #fcfcfc;
+  height: calc(100vh - 70px);
+  position: relative;
+  width: 100%;
+  display: flex; }
+  .l-account__wrapper {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    padding: 20px 10px;
+    width: fit-content; }
+
 .navigation {
   align-items: center;
   background: #f9f9f9;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  padding: 20px; }
+  padding: 20px;
+  max-height: 70px; }
   .navigation__actionsLink {
     font-weight: bold;
     color: #1E1C20;
@@ -25,7 +40,7 @@ a {
 
 .form__fieldInput, .form__btnSave {
   font-weight: bold;
-  margin: 0 35px 20px;
+  margin: 10px 35px;
   padding: 6px 15px;
   border-radius: 5px;
   outline: none;
@@ -45,7 +60,7 @@ a {
 
 .btn {
   font-weight: bold;
-  margin: 0 35px 20px;
+  margin: 10px 35px;
   padding: 6px 15px;
   border-radius: 5px;
   outline: none;
