@@ -8,19 +8,30 @@ from django.contrib.auth.models import User
 class SignupForm(forms.Form):
     """Sign up form."""
 
-    username = forms.CharField(min_length=4, max_length=50)
+    username = forms.CharField(
+        min_length=4,
+        max_length=50
+    )
 
     password = forms.CharField(
         max_length=70,
         widget=forms.PasswordInput()
     )
+
     password_confirmation = forms.CharField(
         max_length=70,
         widget=forms.PasswordInput()
     )
 
-    first_name = forms.CharField(min_length=2, max_length=50)
-    last_name = forms.CharField(min_length=2, max_length=50)
+    first_name = forms.CharField(
+        min_length=2,
+        max_length=50
+    )
+
+    last_name = forms.CharField(
+        min_length=2,
+        max_length=50
+    )
 
     email = forms.CharField(
         min_length=6,
