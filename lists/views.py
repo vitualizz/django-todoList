@@ -21,3 +21,8 @@ class CreateListView(LoginRequiredMixin, CreateView):
     template_name = 'lists/new.html'
     form_class = ListForm
     success_url = reverse_lazy('lists:index')
+
+    def get_form_kwargs(self):
+        kwargs = super(CreateListView, self).get_form_kwargs()
+        kwargs.update({'user': self.request.user})
+        return kwargs
