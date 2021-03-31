@@ -9,6 +9,9 @@
   <div class='container'>
     <div class='lists'>
       {{ list.name }}
+      {% for task in tasks%}
+        {{ task.name }}
+      {% endfor %}
     </div>
 
   </div>

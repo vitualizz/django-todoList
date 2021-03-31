@@ -5,6 +5,7 @@ from django.views.generic import DetailView, ListView, CreateView, UpdateView
 
 # Model
 from lists.models import List
+from tasks.models import Task
 
 # Form
 from lists.forms import ListForm
@@ -21,6 +22,12 @@ class ShowListView(LoginRequiredMixin, DetailView):
     model = List
     template_name = 'lists/show.html'
     context_object_name = 'list'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        list = self.get_object()
+        context['tasks'] = Task.objects.filter(list=list).order_by('-created')
+        return context
 
 
 class CreateListView(LoginRequiredMixin, CreateView):
