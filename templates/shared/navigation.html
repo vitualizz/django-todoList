@@ -5,6 +5,28 @@
 
   <div class='navigation__actions'>
     {% if request.user.is_authenticated %}
+      
+      {% url 'lists:index' as url %}
+      <a
+        class='navigation__actionsLink
+              {% if request.path == url %}
+              navigation__actionsLinkActive
+              {% endif %}'
+        href='{{ url }}'
+      >
+        Home
+      </a>
+      
+      {% url 'lists:new' as url %}
+      <a
+        class='navigation__actionsLink
+              {% if request.path == url %}
+              navigation__actionsLinkActive
+              {% endif %}'
+        href='{{ url }}'
+      >
+        New List
+      </a>
 
       {% url 'users:logout' as url %}
       <a

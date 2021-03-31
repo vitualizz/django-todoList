@@ -13,4 +13,10 @@ urlpatterns = [
         view=views.IndexView.as_view(),
         name='index'
     ),
+
+    path(
+        route='lists/new',
+        view=views.CreateListView.as_view(),
+        name='new'
+    )
 ]
