@@ -1,7 +1,7 @@
 # Django
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import DetailView, ListView, CreateView
+from django.views.generic import DetailView, ListView, CreateView, UpdateView
 
 # Model
 from lists.models import List
@@ -34,11 +34,11 @@ class CreateListView(LoginRequiredMixin, CreateView):
         return kwargs
 
 
-class UpdateListView(LoginRequiredMixin, CreateView):
+class UpdateListView(LoginRequiredMixin, UpdateView):
     template_name = 'lists/form.html'
     model = List
     fields = ['name', 'description']
 
     def get_success_url(self):
-        list_id = self.object.pk
-        return reverse('lists:show', kwargs={'id': list_id})
+        pk = self.object.pk
+        return reverse('lists:show', kwargs={'pk': pk})
