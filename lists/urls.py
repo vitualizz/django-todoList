@@ -18,5 +18,17 @@ urlpatterns = [
         route='lists/new',
         view=views.CreateListView.as_view(),
         name='new'
+    ),
+
+    path(
+        route='lists/<slug:pk>',
+        view=views.ShowListView.as_view(),
+        name='show'
+    ),
+
+    path(
+        route='lists/<slug:pk>/edit',
+        view=views.UpdateListView.as_view(),
+        name='edit'
     )
 ]
