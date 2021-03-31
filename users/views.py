@@ -11,8 +11,6 @@ from django.contrib.auth.models import User
 from users.forms import SignupForm
 
 class SignupView(FormView):
-    """Users sign up view."""
-
     template_name = 'users/signup.html'
     form_class = SignupForm
     success_url = reverse_lazy('users:login')
@@ -24,6 +22,8 @@ class SignupView(FormView):
 
 
 class LoginView(auth_views.LoginView):
-    """Login view."""
-
     template_name = 'users/login.html'
+
+
+class LogoutView(LoginRequiredMixin, auth_views.LogoutView):
+    template_name = 'users/logged_out.html'
