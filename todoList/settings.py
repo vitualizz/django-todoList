@@ -153,6 +153,10 @@ STATICFILES_FINDERS = [
 # Django Sass
 
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
+SASS_PROCESSOR_INCLUDE_DIRS = (
+    os.path.join(BASE_DIR, 'users/static'),
+    os.path.join(BASE_DIR, 'lists/static'),
+)
 
 # Django Login
 LOGIN_URL = '/users/login/'

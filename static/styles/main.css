@@ -8,6 +8,10 @@ a {
 * {
   font-family: 'Manjari', sans-serif; }
 
+.container {
+  width: 80%;
+  margin: 20px auto 0; }
+
 .l-account {
   background: #fff;
   height: calc(100vh - 70px);

@@ -1,0 +1,15 @@
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .lists__list {
+    border-radius: 10px;
+    box-shadow: -2px 7px 16px -4px rgba(0, 0, 0, 0.75);
+    margin: 10px;
+    padding: 20px 10px;
+    width: 33%; }
+    @media only screen and (min-width: 992px) {
+      .lists__list {
+        width: 25%; } }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,20 +1,33 @@
 {% extends 'layouts/base.html' %}
+{% load sass_tags %}
 
 {% block head_content %}
   <title>todoList</title>
 {% endblock %}
 
+{% block styles %}
+  <link rel='stylesheet' href='{% sass_src 'lists/index/styles/main.sass' %}'>
+{% endblock %}
+
 {% block container %}
 
   <div class='container'>
-    <div class='row'>
-
+    <div class='lists'>
       {% for list in lists %}
-        <p>{{ list.name }}</p>
-        <p>{{ list.description }}</p>
-      {% endfor %}
+        <div class='lists__list'>
+          <div class='lists_listName'>
+            <h1>
+              {{ list.name }}
+            </h1>
+          </div>
 
+          <div class='lists__listDescription'>
+            {{ list.description }}
+          </div>
+        </div>
+      {% endfor %}
     </div>
+
   </div>
 
 {% endblock %}
