@@ -1,13 +1,25 @@
 .l-account
-  background: $l-account--background
+  background: $white
   height: calc(100vh - 70px)
   position: relative
   width: 100%
   display: flex
+
+  @include desktop
+    background: $l-account--background
+
   &__wrapper
     background: $white
     border-radius: 15px
-    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5)
     margin: auto
     padding: 20px 10px
     width: fit-content
+    @include tablet
+      transform: scale(1.5)
+
+    @include desktop
+      transform: scale(2)
+      box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5)
+
+    @include large
+      transform: scale(1)

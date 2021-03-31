@@ -9,19 +9,30 @@ a {
   font-family: 'Manjari', sans-serif; }
 
 .l-account {
-  background: #fcfcfc;
+  background: #fff;
   height: calc(100vh - 70px);
   position: relative;
   width: 100%;
   display: flex; }
+  @media only screen and (min-width: 992px) {
+    .l-account {
+      background: #fcfcfc; } }
   .l-account__wrapper {
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
     margin: auto;
     padding: 20px 10px;
     width: fit-content; }
-
+    @media only screen and (min-width: 768px) {
+      .l-account__wrapper {
+        transform: scale(1.5); } }
+    @media only screen and (min-width: 992px) {
+      .l-account__wrapper {
+        transform: scale(2);
+        box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5); } }
+    @media only screen and (min-width: 1200px) {
+      .l-account__wrapper {
+        transform: scale(1); } }
 .navigation {
   align-items: center;
   background: #f9f9f9;
@@ -30,13 +41,22 @@ a {
   justify-content: space-between;
   padding: 20px;
   max-height: 70px; }
+  .navigation__logo {
+    font-size: 20px; }
   .navigation__actionsLink {
     font-weight: bold;
     color: #1E1C20;
     margin: 0 10px;
-    transition: all 0.2s ease-in-out; }
+    transition: all 0.2s ease-in-out;
+    font-size: 25px; }
+    @media only screen and (min-width: 1200px) {
+      .navigation__actionsLink {
+        font-size: 20px; } }
     .navigation__actionsLink:hover, .navigation__actionsLinkActive {
       color: #ff75a0; }
+
+.form__title {
+  margin: 10px 35px; }
 
 .form__fieldInput, .form__btnSave {
   font-weight: bold;

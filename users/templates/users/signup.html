@@ -6,12 +6,13 @@
 {% endblock %}
 
 {% block container %}
-
   <form
     method='POST'
     action='{% url 'users:signup' %}'
     class='form'
   >
+    <h1 class='form__title'>Sign Up</h1>
+
     {% csrf_token %}
 
     {% for hidden in form.hidden_fields %}

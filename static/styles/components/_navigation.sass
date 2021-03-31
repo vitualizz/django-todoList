@@ -6,6 +6,8 @@
   justify-content: space-between
   padding: 20px
   max-height: 70px
+  &__logo
+    font-size: 20px
 
   &__actions
     &Link
@@ -13,6 +15,10 @@
       color: $navigation__actionsLink--color
       margin: 0 10px
       transition: all 0.2s ease-in-out
+      font-size: 25px
+
+      @include large
+        font-size: 20px
 
       &:hover, &Active
         color: $navigation__actionsLinkActive--color
