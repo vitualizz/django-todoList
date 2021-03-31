@@ -149,6 +149,11 @@ STATICFILES_FINDERS = [
 ]
 
 
-#Django Sass
+# Django Sass
 
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'static')
+
+# Django Login
+LOGIN_URL = '/users/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = LOGIN_URL
