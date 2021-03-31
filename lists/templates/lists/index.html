@@ -1,0 +1,21 @@
+{% extends 'layout/base.html' %}
+
+{% block head_content %}
+  <title>todoList</title>
+{% endblock %}
+
+{% block container %}
+
+  <div class='container'>
+    <div class='row'>
+
+      {% for list in lists %}
+        <p>{{ list.name }}</p>
+      {% endfor %}
+
+    </div>
+  </div>
+
+  <!-- {% include 'pagination.html' %} -->
+
+{% endblock %}
