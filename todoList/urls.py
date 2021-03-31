@@ -26,6 +26,13 @@ urlpatterns = [
         )
     ),
 
+    path('',
+        include(
+            ('tasks.urls', 'tasks'),
+            namespace='tasks'
+        )
+    ),
+
     path('users/',
         include(
             ('users.urls', 'users'),
