@@ -1,12 +1,19 @@
 .list
   &__info
     border-bottom: 1px solid #ebeef5
+    display: flex
+    justify-content: space-between
     margin: 40px 0px
     padding-bottom: 20px
+    &Actions
+      font-size: 3em
 
   &__tasks
     display: flex
     flex-wrap: wrap
+    &Actions
+      font-size: 3em
+      width: 100%
 
   &__task
     border-radius: 10px
@@ -18,6 +25,13 @@
     &Content
       height: 70%
 
+    &Footer
+      align-items: center
+      display: flex
+      justify-content: space-between
+      &Actions
+        font-size: 1.3em
+
     &Title
       font-size: 1.4em
       font-weight: bold
@@ -26,8 +40,8 @@
         font-weight: 100
 
     &Status
-      width: 10px
-      height: 10px
+      width: 20px
+      height: 20px
       border-radius: 100%
       &Completed
         background: green

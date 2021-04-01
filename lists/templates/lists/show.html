@@ -14,11 +14,25 @@
   <div class='container'>
     <div class='list'>
       <div class='list__info'>
-        <h1>{{ list.name }}</h1>
-        <h3>{{ list.description }}</h3>
+        <div class='list__infoContent'>
+          <h1>{{ list.name }}</h1>
+          <h3>{{ list.description }}</h3>
+        </div>
+
+        <div class='list__infoActions'>
+          <a href='{% url 'lists:edit' pk=list.pk %}'>
+            <i class='fas fa-edit'></i>
+          </a>
+        </div>
       </div>
 
       <div class='list__tasks'>
+        <div class='list__tasksActions'>
+          <a href='{% url 'tasks:new' pk=list.pk %}'>
+            <i class='fas fa-plus'></i>
+          </a>
+        </div>
+
         {% for task in tasks %}
           <div class='list__task'>
             <div class='list__taskContent'>
@@ -35,9 +49,14 @@
             </div>
 
             <div class='list__taskFooter'>
-              <div class='list__taskActions'>
-                <a href='{% url 'tasks:edit' pk=task.pk %}'>Edit</a>
-                <a href='{% url 'tasks:delete' pk=task.pk %}' method='delete' >Delete</a>
+              <div class='list__taskFooterActions'>
+                <a href='{% url 'tasks:edit' pk=task.pk %}'>
+                  <i class='fas fa-edit'></i>
+                </a>
+
+                <a href='{% url 'tasks:delete' pk=task.pk %}'>
+                  <i class='fas fa-trash'></i>
+                </a>
               </div>
 
               <div class='

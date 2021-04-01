@@ -46,7 +46,10 @@ THIRD_PARTY_APPS = [
     'sass_processor',
 
     # Widget Tweaks
-    'widget_tweaks'
+    'widget_tweaks',
+
+    # Font Awesome
+    'fontawesome-free'
 ]
 
 LOCAL_APPS = [

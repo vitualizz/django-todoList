@@ -5,12 +5,15 @@
 
   {% block head_content %}{% endblock %}
   {% load sass_tags %}
+  {% load static %}
 
   <link rel='preconnect' href='https://fonts.gstatic.com'>
   <link href='https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap' rel='stylesheet'>
+  <link href="{% static 'fontawesome_free/css/solid.min.css' %}" rel="stylesheet" type="text/css">
   <link rel='stylesheet' href='{% sass_src 'styles/main.sass'%}'>
   {% block styles %}{% endblock %}
 
+  <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
 </head>

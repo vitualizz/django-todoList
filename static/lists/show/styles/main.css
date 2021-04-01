@@ -1,11 +1,18 @@
 .list__info {
   border-bottom: 1px solid #ebeef5;
+  display: flex;
+  justify-content: space-between;
   margin: 40px 0px;
   padding-bottom: 20px; }
+  .list__infoActions {
+    font-size: 3em; }
 
 .list__tasks {
   display: flex;
   flex-wrap: wrap; }
+  .list__tasksActions {
+    font-size: 3em;
+    width: 100%; }
 
 .list__task {
   border-radius: 10px;
@@ -16,6 +23,12 @@
   width: 33%; }
   .list__taskContent {
     height: 70%; }
+  .list__taskFooter {
+    align-items: center;
+    display: flex;
+    justify-content: space-between; }
+    .list__taskFooterActions {
+      font-size: 1.3em; }
   .list__taskTitle {
     font-size: 1.4em;
     font-weight: bold; }
@@ -23,8 +36,8 @@
       font-size: 0.7em;
       font-weight: 100; }
   .list__taskStatus {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border-radius: 100%; }
     .list__taskStatusCompleted {
       background: green; }
