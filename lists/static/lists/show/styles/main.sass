@@ -1,0 +1,37 @@
+.list
+  &__info
+    border-bottom: 1px solid #ebeef5
+    margin: 40px 0px
+    padding-bottom: 20px
+
+  &__tasks
+    display: flex
+    flex-wrap: wrap
+
+  &__task
+    border-radius: 10px
+    box-shadow: -2px 7px 16px -4px rgba(0,0,0,0.75)
+    margin: 10px 20px
+    padding: 20px
+    min-height: 100px
+    width: 33%
+    &Content
+      height: 70%
+
+    &Title
+      font-size: 1.4em
+      font-weight: bold
+      i
+        font-size: 0.7em
+        font-weight: 100
+
+    &Status
+      width: 10px
+      height: 10px
+      border-radius: 100%
+      &Completed
+        background: green
+      &Pending
+        background: yellow
+      &Expired
+        background: orange

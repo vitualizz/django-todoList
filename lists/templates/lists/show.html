@@ -1,17 +1,62 @@
 {% extends 'layouts/base.html' %}
+{% load sass_tags %}
 
 {% block head_content %}
-  <title>todoList</title>
+  <title>todoList - List</title>
+{% endblock %}
+
+{% block styles %}
+  <link rel='stylesheet' href='{% sass_src 'lists/show/styles/main.sass' %}'>
 {% endblock %}
 
 {% block container %}
 
   <div class='container'>
-    <div class='lists'>
-      {{ list.name }}
-      {% for task in tasks%}
-        {{ task.name }}
-      {% endfor %}
+    <div class='list'>
+      <div class='list__info'>
+        <h1>{{ list.name }}</h1>
+        <h3>{{ list.description }}</h3>
+      </div>
+
+      <div class='list__tasks'>
+        {% for task in tasks %}
+          <div class='list__task'>
+            <div class='list__taskContent'>
+              <div class='list__taskTitle'>
+                {{ task.name }}
+                {% if task.expired_at != None %}
+                  <i> - {{ task.expired_at }}</i>
+                {% endif %}
+              </div>
+
+              <div class='list__taskDescription'>
+                {{ task.description }}
+              </div>
+            </div>
+
+            <div class='list__taskFooter'>
+              <div class='list__taskActions'>
+                <a href='{% url 'tasks:edit' pk=task.pk %}'>Edit</a>
+                <a href='{% url 'tasks:delete' pk=task.pk %}' method='delete' >Delete</a>
+              </div>
+
+              <div class='
+                list__taskStatus
+                {% if task.completed %}
+                  list__taskStatusCompleted
+                {% else %}
+                  {% if task.expired_at != None and task.expired_at < now %}
+                    list__taskStatusExpired
+                  {% else %}
+                    list__taskStatusPending
+                  {% endif %}
+                {% endif %}
+                '
+              ></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
     </div>
 
   </div>

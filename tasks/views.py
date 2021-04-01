@@ -1,7 +1,7 @@
 # Django
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 # Models
 from lists.models import List
@@ -30,7 +30,18 @@ class CreateTaskView(LoginRequiredMixin, CreateView):
 class UpdateTaskView(LoginRequiredMixin, UpdateView):
     template_name = 'tasks/form.html'
     model = Task
-    fields = ['name', 'description']
+    fields = ['name', 'description', 'completed']
+
+    def get_success_url(self):
+        pk = self.object.list.pk
+        return reverse('lists:show', kwargs={'pk': pk})
+
+
+class DeleteTaskView(LoginRequiredMixin, DeleteView):
+    model = Task
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)
 
     def get_success_url(self):
         pk = self.object.list.pk

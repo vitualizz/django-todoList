@@ -14,7 +14,10 @@
   <div class='container'>
     <div class='lists'>
       {% for list in lists %}
-        <a href="/lists/{{ list.id }}" class='lists__list'>
+        <a
+          href='{% url 'lists:show' pk=list.pk %}'
+          class='lists__list'
+        >
           <div class='lists_listName'>
             <h1>
               {{ list.name }}

@@ -16,6 +16,12 @@ urlpatterns = [
     path(
         route='tasks/<slug:pk>/edit',
         view=views.UpdateTaskView.as_view(),
-        name='new'
+        name='edit'
     ),
+
+    path(
+        route='tasks/<slug:pk>/delete',
+        view=views.DeleteTaskView.as_view(),
+        name='delete'
+    )
 ]

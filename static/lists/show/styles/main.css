@@ -1,0 +1,36 @@
+.list__info {
+  border-bottom: 1px solid #ebeef5;
+  margin: 40px 0px;
+  padding-bottom: 20px; }
+
+.list__tasks {
+  display: flex;
+  flex-wrap: wrap; }
+
+.list__task {
+  border-radius: 10px;
+  box-shadow: -2px 7px 16px -4px rgba(0, 0, 0, 0.75);
+  margin: 10px 20px;
+  padding: 20px;
+  min-height: 100px;
+  width: 33%; }
+  .list__taskContent {
+    height: 70%; }
+  .list__taskTitle {
+    font-size: 1.4em;
+    font-weight: bold; }
+    .list__taskTitle i {
+      font-size: 0.7em;
+      font-weight: 100; }
+  .list__taskStatus {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%; }
+    .list__taskStatusCompleted {
+      background: green; }
+    .list__taskStatusPending {
+      background: yellow; }
+    .list__taskStatusExpired {
+      background: orange; }
+
+/*# sourceMappingURL=main.css.map */
