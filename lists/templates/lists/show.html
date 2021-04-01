@@ -28,7 +28,10 @@
 
       <div class='list__tasks'>
         <div class='list__tasksActions'>
-          <a href='{% url 'tasks:new' pk=list.pk %}'>
+          <a
+            href='{% url 'tasks:new' pk=list.pk %}'
+            data-confirm='Prueba'
+          >
             <i class='fas fa-plus'></i>
           </a>
         </div>
